@@ -1,0 +1,33 @@
+package Stack;
+
+
+public class myStockNode<T> {
+    T data;
+    myStockNode next;
+
+    public myStockNode(T data) {
+        this.data = data;
+    }
+
+    public myStockNode(T data, myStockNode<T> next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    public T getData(){
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public myStockNode<T> getNext() {
+        return next;
+    }
+
+    public void setNext(myStockNode<T> next) {
+        this.next = next;
+    }
+
+}
