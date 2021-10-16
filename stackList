@@ -1,0 +1,46 @@
+package Stack;
+
+import MyLinkedList.MyListnode;
+
+public class myStack<T> {
+    myStockNode<T> head;
+    myStockNode<T> tail;
+
+    public myStack(){
+
+    }
+
+    public void push(T data){
+        if(head == null && tail == null){
+            myStockNode<T> newNode = new myStockNode(data, null);
+            head = newNode;
+            tail = newNode;
+        }else{
+            myStockNode<T> newNode = new myStockNode(data, head);
+            head = newNode;
+        }
+
+    }
+
+    public T pop(){
+        if(head == null && tail == null){
+            return null;
+        }
+        T dataToReturn = head.getData();
+        myStockNode<T> tempNode = head;
+        head = head.getNext();
+        tempNode.setNext(null);
+        return dataToReturn;
+    }
+
+    public T peek(){
+        if(head == null){
+            return null;
+        }
+        return head.getData();
+    }
+
+    public boolean isEmpty(){
+        return head == null;
+    }
+}
